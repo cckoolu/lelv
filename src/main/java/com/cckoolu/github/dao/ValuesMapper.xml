@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--绑定对应的Dao接口-->
+<mapper namespace="com.cckoolu.github.dao.ValuesDao">
+    <select id="selectValues" resultType="com.cckoolu.github.entity.ValueOnlyWxid">
+        select t.wxid from wechat_user3 as t where `update` = 1
+    </select>
+
+    <update id="updateValue" parameterType="com.cckoolu.github.entity.Values3">
+        INSERT INTO `wechat_user3`
+        ( `wxid`,`phone`,`chiid`,`chiid2`,`name`,`value`,`sessionid`,`jiuquan`,`token`,`xingming`,`pid`,`update`,`save_datetime` )
+        VALUES
+        ( #{wxid},#{phone},#{chiid},#{chiid2}, #{name},#{value} ,#{sessionid},#{jiuquan},#{token},#{xingming},#{pid},#{update},#{save_datetime} )
+        on DUPLICATE KEY UPDATE
+        `phone` = #{phone},
+        `chiid` = #{chiid},
+        `chiid2` = #{chiid2},
+        `name` = #{name},
+        `value` = #{value},
+        `sessionid` = #{sessionid},
+        `jiuquan` = #{jiuquan},
+        `token` = #{token},
+        `xingming` = #{xingming},
+        `pid` = #{pid},
+        `update` = #{update},
+        `save_datetime` = #{save_datetime}
+    </update>
+</mapper>

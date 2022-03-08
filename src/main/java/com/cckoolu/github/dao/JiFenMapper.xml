@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--绑定对应的Dao接口-->
+<mapper namespace="com.cckoolu.github.dao.JiFenDao">
+    <select id="selectJiFen" resultType="com.cckoolu.github.entity.JifenOnlyWxid">
+        select t.wxid from wechat_user2 as t where `update` = 1
+    </select>
+
+    <update id="updateJiFen" parameterType="com.cckoolu.github.entity.JiFen2">
+        INSERT INTO `wechat_user2` (`wxid`,`nicheng`,`chiid`,`chiid2`,`code`,`update`,`save_datetime`)
+        VALUES (#{wxid},#{nicheng},#{chiid},#{chiid2}, #{code},#{update},#{save_datetime})
+        on DUPLICATE KEY UPDATE nicheng = #{nicheng}, `chiid` = #{chiid},
+        `chiid2` = #{chiid2},`code` = #{code},`update` = #{update},`save_datetime` = #{save_datetime}
+    </update>
+</mapper>
