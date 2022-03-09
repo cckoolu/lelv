@@ -10,7 +10,7 @@ public class JiFen2 {
     private String chiid2;
     private String code;
     private int update;
-    private Date save_datetime;
+    private Date updated;
 
     public JiFen2(String nicheng, String wxid, String chiid, String chiid2, String code, int update, Date date) {
         this.nicheng = nicheng;
@@ -19,15 +19,15 @@ public class JiFen2 {
         this.chiid2 = chiid2;
         this.code = code;
         this.update = update;
-        this.save_datetime = date;
+        this.updated = date;
     }
 
-    public Date getSave_datetime() {
-        return save_datetime;
+    public Date getUpdated() {
+        return updated;
     }
 
-    public void setSave_datetime(Date save_datetime) {
-        this.save_datetime = save_datetime;
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 
     public int getId() {

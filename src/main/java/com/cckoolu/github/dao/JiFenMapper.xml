@@ -9,9 +9,9 @@
     </select>
 
     <update id="updateJiFen" parameterType="com.cckoolu.github.entity.JiFen2">
-        INSERT INTO `wechat_user2` (`wxid`,`nicheng`,`chiid`,`chiid2`,`code`,`update`,`save_datetime`)
-        VALUES (#{wxid},#{nicheng},#{chiid},#{chiid2}, #{code},#{update},#{save_datetime})
+        INSERT INTO `wechat_user2` (`wxid`,`nicheng`,`chiid`,`chiid2`,`code`,`update`,`updated`)
+        VALUES (#{wxid},#{nicheng},#{chiid},#{chiid2}, #{code},#{update},#{updated})
         on DUPLICATE KEY UPDATE nicheng = #{nicheng}, `chiid` = #{chiid},
-        `chiid2` = #{chiid2},`code` = #{code},`update` = #{update},`save_datetime` = #{save_datetime}
+        `chiid2` = #{chiid2},`code` = #{code},`update` = #{update},`updated` = #{updated}
     </update>
 </mapper>

@@ -16,7 +16,7 @@ public class Values3 {
     private  String token;
     private  String xingming;
     private  int update;
-    private  Date save_datetime;
+    private  Date updated;
 
     public Values3(String phone, String name, String chiid, String chiid2, int pid, String value,
                    String sessionid, String jiuquan, String wxid, String token, String xingming, int update, Date date) {
@@ -32,7 +32,7 @@ public class Values3 {
         this.token = token;
         this.xingming = xingming;
         this.update = update;
-        this.save_datetime = date;
+        this.updated = date;
     }
 
     public String getPhone() {
@@ -131,12 +131,12 @@ public class Values3 {
         this.update = update;
     }
 
-    public Date getSave_datetime() {
-        return save_datetime;
+    public Date getUpdated() {
+        return updated;
     }
 
-    public void setSave_datetime(Date save_datetime) {
-        this.save_datetime = save_datetime;
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 
     @Override

@@ -10,9 +10,9 @@
 
     <update id="updateValue" parameterType="com.cckoolu.github.entity.Values3">
         INSERT INTO `wechat_user3`
-        ( `wxid`,`phone`,`chiid`,`chiid2`,`name`,`value`,`sessionid`,`jiuquan`,`token`,`xingming`,`pid`,`update`,`save_datetime` )
+        ( `wxid`,`phone`,`chiid`,`chiid2`,`name`,`value`,`sessionid`,`jiuquan`,`token`,`xingming`,`pid`,`update`,`updated` )
         VALUES
-        ( #{wxid},#{phone},#{chiid},#{chiid2}, #{name},#{value} ,#{sessionid},#{jiuquan},#{token},#{xingming},#{pid},#{update},#{save_datetime} )
+        ( #{wxid},#{phone},#{chiid},#{chiid2}, #{name},#{value} ,#{sessionid},#{jiuquan},#{token},#{xingming},#{pid},#{update},#{updated} )
         on DUPLICATE KEY UPDATE
         `phone` = #{phone},
         `chiid` = #{chiid},
@@ -25,6 +25,6 @@
         `xingming` = #{xingming},
         `pid` = #{pid},
         `update` = #{update},
-        `save_datetime` = #{save_datetime}
+        `updated` = #{updated}
     </update>
 </mapper>
