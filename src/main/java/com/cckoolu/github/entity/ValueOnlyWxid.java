@@ -1,5 +1,6 @@
 package com.cckoolu.github.entity;
 
+
 public class ValueOnlyWxid {
 
     private String wxid;
@@ -8,12 +9,7 @@ public class ValueOnlyWxid {
         return wxid;
     }
 
-    public ValueOnlyWxid(String wxid) {
+    public void setWxid(String wxid) {
         this.wxid = wxid;
-    }
-
-    @Override
-    public String toString() {
-        return wxid;
     }
 }

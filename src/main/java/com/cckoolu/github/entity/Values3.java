@@ -1,6 +1,8 @@
 package com.cckoolu.github.entity;
 
 
+
+
 import java.util.Date;
 
 public class Values3 {
@@ -15,11 +17,13 @@ public class Values3 {
     private  String wxid;
     private  String token;
     private  String xingming;
-    private  int update;
     private  Date updated;
 
+    public Values3(){
+
+    }
     public Values3(String phone, String name, String chiid, String chiid2, int pid, String value,
-                   String sessionid, String jiuquan, String wxid, String token, String xingming, int update, Date date) {
+                   String sessionid, String jiuquan, String wxid, String token, String xingming, Date date) {
         this.phone = phone;
         this.name = name;
         this.chiid = chiid;
@@ -31,8 +35,25 @@ public class Values3 {
         this.wxid = wxid;
         this.token = token;
         this.xingming = xingming;
-        this.update = update;
         this.updated = date;
+    }
+
+    @Override
+    public String toString() {
+        return "Values3{" +
+                "phone='" + phone + '\'' +
+                ", name='" + name + '\'' +
+                ", chiid='" + chiid + '\'' +
+                ", chiid2='" + chiid2 + '\'' +
+                ", pid=" + pid +
+                ", value='" + value + '\'' +
+                ", sessionid='" + sessionid + '\'' +
+                ", jiuquan='" + jiuquan + '\'' +
+                ", wxid='" + wxid + '\'' +
+                ", token='" + token + '\'' +
+                ", xingming='" + xingming + '\'' +
+                ", updated=" + updated +
+                '}';
     }
 
     public String getPhone() {
@@ -123,26 +144,11 @@ public class Values3 {
         this.xingming = xingming;
     }
 
-    public int getUpdate() {
-        return update;
-    }
-
-    public void setUpdate(int update) {
-        this.update = update;
-    }
-
     public Date getUpdated() {
         return updated;
     }
 
     public void setUpdated(Date updated) {
         this.updated = updated;
-    }
-
-    @Override
-    public String toString() {
-        return "{" +
-                "wxid='" + wxid + '\'' +
-                '}';
     }
 }

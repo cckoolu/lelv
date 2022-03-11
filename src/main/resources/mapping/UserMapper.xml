@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cckoolu.github.mapper.UserMapper">
+    <select id="QueryById" resultType="com.cckoolu.github.entity.User">
+        select * from user where id = #{id}
+    </select>
+
+    <select id="selectJiFen" resultType="com.cckoolu.github.entity.JifenOnlyWxid">
+        select t.wxid from wechat_user2 as t where `update` = 1
+    </select>
+
+    <update id="updateJiFen" parameterType="com.cckoolu.github.entity.JiFen2">
+        INSERT INTO `wechat_user2` (`wxid`,`nicheng`,`chiid`,`chiid2`,`code`,`updated`)
+        VALUES (#{wxid},#{nicheng},#{chiid},#{chiid2}, #{code},#{updated})
+        on DUPLICATE KEY UPDATE nicheng = #{nicheng}, `chiid` = #{chiid},
+        `chiid2` = #{chiid2},`code` = #{code},`updated` = #{updated}
+    </update>
+
+    <select id="selectValues" resultType="com.cckoolu.github.entity.ValueOnlyWxid">
+        select t.wxid from wechat_user3 as t where `update` = 0
+    </select>
+
+    <update id="updateValue" parameterType="com.cckoolu.github.entity.Values3">
+        INSERT INTO `wechat_user3`
+        ( `wxid`,`phone`,`chiid`,`chiid2`,`name`,`value`,`sessionid`,`jiuquan`,`token`,`xingming`,`pid`,`updated` )
+        VALUES
+        ( #{wxid},#{phone},#{chiid},#{chiid2}, #{name},#{value} ,#{sessionid},#{jiuquan},#{token},#{xingming},#{pid},#{updated} )
+        on DUPLICATE KEY UPDATE
+        `phone` = #{phone},
+        `chiid` = #{chiid},
+        `chiid2` = #{chiid2},
+        `name` = #{name},
+        `value` = #{value},
+        `sessionid` = #{sessionid},
+        `jiuquan` = #{jiuquan},
+        `token` = #{token},
+        `xingming` = #{xingming},
+        `pid` = #{pid},
+        `updated` = #{updated}
+    </update>
+</mapper>

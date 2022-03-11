@@ -1,5 +1,6 @@
 package com.cckoolu.github.entity;
 
+
 import java.util.Date;
 
 public class JiFen2 {
@@ -9,24 +10,27 @@ public class JiFen2 {
     private String chiid;
     private String chiid2;
     private String code;
-    private int update;
     private Date updated;
 
-    public JiFen2(String nicheng, String wxid, String chiid, String chiid2, String code, int update, Date date) {
+    public JiFen2(){
+
+    }
+    public JiFen2(String nicheng, String wxid, String chiid, String chiid2, String code,  Date date) {
         this.nicheng = nicheng;
         this.wxid = wxid;
         this.chiid = chiid;
         this.chiid2 = chiid2;
         this.code = code;
-        this.update = update;
         this.updated = date;
     }
 
-    public Date getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Date updated) {
+    public JiFen2(int id, String nicheng, String wxid, String chiid, String chiid2, String code, Date updated) {
+        this.id = id;
+        this.nicheng = nicheng;
+        this.wxid = wxid;
+        this.chiid = chiid;
+        this.chiid2 = chiid2;
+        this.code = code;
         this.updated = updated;
     }
 
@@ -78,24 +82,11 @@ public class JiFen2 {
         this.code = code;
     }
 
-    public int getUpdate() {
-        return update;
+    public Date getUpdated() {
+        return updated;
     }
 
-    public void setUpdate(int update) {
-        this.update = update;
-    }
-
-    @Override
-    public String toString() {
-        return "JiFen2{" +
-                "id=" + id +
-                ", nicheng='" + nicheng + '\'' +
-                ", wxid='" + wxid + '\'' +
-                ", chiid='" + chiid + '\'' +
-                ", chiid2='" + chiid2 + '\'' +
-                ", code='" + code + '\'' +
-                ", update=" + update +
-                '}';
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 }
